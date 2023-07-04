@@ -32,14 +32,12 @@ export class AppComponent {
       ['8', false]
     ]);
 
-    let col: number = 0;
     let rowArr: string[] = [];
-
     const size = this.matrix.length;
 
     this.matrix = [];
 
-    for (let row = 0; (row < size) && (col < size);) {
+    for (let row = 0; row < size;) {
       const randomNum: number = Math.floor(Math.random() * 9); // Generate a random number between 0 - 8
       const value: string = TILES[randomNum];
 
@@ -48,11 +46,10 @@ export class AppComponent {
         isFilled.set(value, true);
       }
 
-      if (rowArr.length === 3) {
+      if (rowArr.length === size) {
         this.matrix.push(rowArr);
         rowArr = [];
         row++;
-        col = 0;
       }
     }
   }

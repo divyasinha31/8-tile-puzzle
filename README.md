@@ -33,7 +33,7 @@ UI Assignment for Acceldata
     > This value if is not present in the matrix then we push it in the row and set it to true indicating that its been filled in the matrix.
     > Once we have a row ready to insert in the matrix, we push it inside the matrix.
     >
-    > We increment the row count and reset the col size to 0.
+    > We increment the row count.
 
 
 3. moveTile()
