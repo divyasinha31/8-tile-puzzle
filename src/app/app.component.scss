@@ -1,0 +1,48 @@
+.matrix {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	background-color: #7d83c4;
+	padding: 5px;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.cell {
+	cursor: pointer;
+	padding: 30px;
+	border: 2px solid #212c58;
+	border-radius: 10px;
+	width: 100%;
+	display: flex;
+  justify-content: center;
+  align-items: center;
+	margin: 5px;
+	color: #212c58;
+	background-color: #9daddf;
+	font-size: 2rem;
+}
+
+.cell:hover {
+  background-color: #c0cffa;
+}
+
+.buttons {
+	margin-top: 10px;
+}
+
+.btn {
+	padding: 10px 20px;
+	color: #212c58;
+	background-color: #9daddf;
+	cursor: pointer;
+	font-size: 1.5rem;
+}
+
+.btn:hover {
+	background-color: #c0cffa;
+}
