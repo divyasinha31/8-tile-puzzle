@@ -1,6 +1,6 @@
 <div class="matrix">
-  <div *ngFor="let row of matrix; let i = index" class="row">
-    <div *ngFor="let element of row; let j = index" (click)="moveTile(i, j)" class="cell">
+  <div *ngFor="let row of matrix; let r = index" class="row">
+    <div *ngFor="let element of row; let c = index" (click)="moveTile(r, c)" class="cell">
       {{element}}
     </div>
   </div>

@@ -57,14 +57,17 @@ export class AppComponent {
   moveTile(row: number, col: number) {
     const emptyTilePosition: iPosition = this.getEmptyTilePosition();
     const isEmptyTile: boolean = this.isEmptyTile(row, col, emptyTilePosition.row, emptyTilePosition.col);
-    const direction: string = this.getDirection(row, col, emptyTilePosition.row, emptyTilePosition.col);
 
-    // If the selected tile is not the empty tile and the direction of swap is a movable one
-    if (!isEmptyTile && DIRECTIONS.includes(direction)) {
-      this.swapTiles(row, col, emptyTilePosition.row, emptyTilePosition.col);
+    // If the selected tile is not the empty tile
+    if (!isEmptyTile) {
+      const direction: string = this.getDirection(row, col, emptyTilePosition.row, emptyTilePosition.col);
+
+      // If direction of swap is a movable one
+      if (DIRECTIONS.includes(direction)) {
+        this.swapTiles(row, col, emptyTilePosition.row, emptyTilePosition.col);
+        this.matrix = [...this.matrix];
+      }
     }
-
-    this.matrix = [...this.matrix];
   }
 
   // Get row and column indexes of empty tile
@@ -91,7 +94,7 @@ export class AppComponent {
 
   // Checking if the selected row is the empty tile
   private isEmptyTile(r: number, c: number, etr: number, etc: number) {
-    return (r === etr && c === etc);
+    return ((r === etr) && (c === etc));
   }
 
   // Getting direction of movement
